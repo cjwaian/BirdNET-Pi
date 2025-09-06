@@ -301,3 +301,4 @@ grep -ve '^#' -e '^$' /etc/birdnet/birdnet.conf > $my_dir/firstrun.ini
 
 source /etc/birdnet/birdnet.conf
 echo 'A $comname ($sciname)  was just detected with a confidence of $confidence ($reason)' | sudo -u $BIRDNET_USER tee "$HOME/BirdNET-Pi/body.txt"
+chmod g+w "$HOME/BirdNET-Pi/body.txt"

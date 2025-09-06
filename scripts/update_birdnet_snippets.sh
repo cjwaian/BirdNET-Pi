@@ -94,6 +94,7 @@ sed -i --follow-symlinks -E "s/$SRC/$DST/" /etc/birdnet/birdnet.conf
 
 if ! [ -f $HOME/BirdNET-Pi/body.txt ];then
   grep -E '^APPRISE_NOTIFICATION_BODY=".*"' birdnet.conf | cut -d '"' -f 2 | sudo_with_user tee "$HOME/BirdNET-Pi/body.txt"
+  chmod g+w "$HOME/BirdNET-Pi/body.txt"
   sed -i --follow-symlinks  -E  's/^APPRISE_NOTIFICATION_BODY=/#APPRISE_NOTIFICATION_BODY=/' /etc/birdnet/birdnet.conf
 fi
 
